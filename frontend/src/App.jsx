@@ -2,7 +2,7 @@ import React, { useState, useRef, useCallback, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
-const API_BASE_URL = 'https://automatic-chainsaw-v6w945q75jwjcxjxr-8000.app.github.dev';
+const API_BASE_URL = 'https://bad-posture-detection-gitx.onrender.com';
 
 function App() {
   const [selectedFile, setSelectedFile] = useState(null);
