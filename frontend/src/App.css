@@ -1,0 +1,460 @@
+/* Modern CSS Variables with enhanced color palette */
+:root {
+  --primary-color: #6b21a8; /* Richer purple */
+  --primary-dark: #5b1a90;
+  --primary-light: #9333ea;
+  --secondary-color: #10b981; /* Vibrant green */
+  --secondary-dark: #059669;
+  --accent-color: #f59e0b; /* Warm yellow */
+  --error-color: #ef4444; /* Bold red */
+  --success-color: #22c55e; /* Bright green */
+  --warning-color: #f97316; /* Orange */
+  --background-gradient: linear-gradient(135deg, #5b1a90 0%, #9333ea 100%);
+  --card-background: rgba(255, 255, 255, 0.98);
+  --glass-background: rgba(255, 255, 255, 0.12);
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --border-radius: 16px;
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.2);
+
+  /* Responsive variables */
+  --container-max-width: 900px;
+  --container-padding: clamp(1rem, 4vw, 2rem);
+  --header-padding: clamp(2rem, 5vw, 3rem);
+  --card-padding: clamp(1.5rem, 3vw, 2.5rem);
+  --gap-size: clamp(1.5rem, 3vw, 2rem);
+  --font-size-h1: clamp(2rem, 5vw, 3rem);
+  --font-size-h2: clamp(1.5rem, 4vw, 2rem);
+  --font-size-h3: clamp(1.2rem, 3vw, 1.6rem);
+  --font-size-body: clamp(1rem, 2.5vw, 1.1rem);
+  --button-padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+  --button-font-size: clamp(0.9rem, 2.5vw, 1rem);
+}
+
+/* Global styles with improved typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--background-gradient);
+  min-height: 100vh;
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main app container centered */
+.App {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: var(--container-padding);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Enhanced header with professional look */
+.App-header {
+  background: var(--glass-background);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: var(--header-padding);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--gap-size);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.App-header h1 {
+  font-size: var(--font-size-h1);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(45deg, #ffffff, #d1d5db);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.App-header p {
+  font-size: var(--font-size-body);
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 400;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Main content centered */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-size);
+  width: 100%;
+  max-width: 600px;
+  flex: 1;
+}
+
+/* Error message styling */
+.error-message {
+  background: var(--error-color);
+  color: white;
+  padding: 1.25rem;
+  border-radius: var(--border-radius);
+  margin-bottom: var(--gap-size);
+  text-align: center;
+  font-weight: 500;
+  box-shadow: var(--shadow-md);
+}
+
+/* Controls with neumorphic card design */
+.controls {
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  padding: var(--card-padding);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 600px;
+}
+
+.controls:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Enhanced posture selector */
+.posture-type-selector {
+  display: flex;
+  gap: clamp(1rem, 2vw, 1.5rem);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: var(--gap-size);
+}
+
+.posture-type-selector label {
+  padding: clamp(0.75rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+  border-radius: 50px;
+  background: var(--glass-background);
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+  font-size: var(--font-size-body);
+  text-align: center;
+  min-width: 140px;
+}
+
+.posture-type-selector label:hover {
+  background: var(--primary-light);
+  color: white;
+}
+
+.posture-type-selector input[type="radio"] {
+  display: none;
+}
+
+.posture-type-selector input[type="radio"]:checked + label {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-dark);
+  box-shadow: 0 6px 16px rgba(107, 33, 168, 0.3);
+}
+
+/* Input section with improved layout */
+.input-section {
+  display: grid;
+  gap: var(--gap-size);
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+.file-upload {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.webcam-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Modern button with subtle scale effect */
+button {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  padding: var(--button-padding);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: var(--button-font-size);
+  font-weight: 600;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+  width: 100%;
+  min-height: 48px;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  background: linear-gradient(135deg, #9ca3af, #6b7280);
+  cursor: not-allowed;
+  transform: none;
+  opacity: 0.7;
+}
+
+/* File input with drag-and-drop styling */
+input[type="file"] {
+  padding: 1.25rem;
+  border: 2px dashed var(--primary-light);
+  border-radius: var(--border-radius);
+  background: var(--card-background);
+  cursor: pointer;
+  font-size: var(--font-size-body);
+  width: 100%;
+  transition: border-color 0.2s ease;
+  min-height: 48px;
+}
+
+input[type="file"]:hover {
+  border-color: var(--primary-color);
+}
+
+/* File info styling */
+.file-info {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  background: var(--glass-background);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+/* File preview styling */
+.file-preview {
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  padding: var(--card-padding);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.file-preview h3 {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-size: var(--font-size-h3);
+}
+
+.preview-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  max-height: 320px;
+  object-fit: contain;
+}
+
+/* Webcam container */
+.webcam-container {
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  padding: var(--card-padding);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.webcam-container video {
+  border: 3px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-md);
+  width: 100%;
+  height: auto;
+  max-width: 640px;
+  max-height: 480px;
+  object-fit: cover;
+}
+
+/* Analysis results styling */
+.analysis-results {
+  background: var(--card-background);
+  border-radius: var(--border-radius);
+  padding: var(--card-padding);
+  box-shadow: var(--shadow-md);
+  margin-top: var(--gap-size);
+}
+
+.analysis-results h2 {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-size: var(--font-size-h2);
+  text-align: center;
+}
+
+.posture-status {
+  padding: 1.25rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: var(--font-size-h3);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.posture-status.good-posture {
+  background: var(--success-color);
+  color: white;
+}
+
+.posture-status.bad-posture {
+  background: var(--error-color);
+  color: white;
+}
+
+.issues-list {
+  margin-bottom: 1rem;
+}
+
+.issues-list h3 {
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+  font-size: var(--font-size-h3);
+}
+
+.issues-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.issues-list li {
+  background: var(--glass-background);
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--error-color);
+}
+
+.annotated-image {
+  text-align: center;
+}
+
+.annotated-image h3 {
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-size: var(--font-size-h3);
+}
+
+.result-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  max-height: 400px;
+  object-fit: contain;
+}
+
+/* Responsive breakpoints */
+@media (min-width: 768px) {
+  .input-section {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .webcam-section {
+    align-items: center;
+  }
+  
+  .file-upload {
+    align-items: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .posture-type-selector {
+    flex-direction: column;
+  }
+  
+  .posture-type-selector label {
+    min-width: auto;
+  }
+  
+  .webcam-container video {
+    max-height: 300px;
+  }
+  
+  .preview-image {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-padding: 1rem;
+    --header-padding: 1.5rem;
+    --card-padding: 1rem;
+    --gap-size: 1rem;
+  }
+  
+  .App-header h1 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+  
+  .webcam-container video {
+    max-height: 240px;
+  }
+  
+  .preview-image {
+    max-height: 150px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .preview-image,
+  .result-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --card-background: rgba(30, 41, 59, 0.95);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
