@@ -1,11 +1,12 @@
 🧍‍♀️ Bad Posture Detection App
+
 A web application for detecting bad posture using a simple, rule-based AI system. Built with React (Vite) for the frontend and FastAPI for the backend.
 
 🚀 Live Demo
-👉 View the live site
+👉 [View the live site](https://bad-posture-detection-three.vercel.app/)
 
 📹 Demo Video
-👉 Watch the demo video
+👉 [Watch the demo video](https://drive.google.com/file/d/1LM8Lvgro4G2N5z_YYNZXxfcx0nyHOo2h/view?usp=sharing)
 
 📂 Project Structure
 bash
@@ -61,7 +62,7 @@ uvicorn main:app --reload
 ✅ Deliverables
 📂 GitHub Repo: Includes /frontend and /backend folders
 
-🌐 Public Deployment: Live App Link
+🌐 Public Deployment: 👉 (https://bad-posture-detection-three.vercel.app/)
 
-📹 Demo Video: Demo Video Link
+📹 Demo Video: 👉 (https://drive.google.com/file/d/1LM8Lvgro4G2N5z_YYNZXxfcx0nyHOo2h/view?usp=sharing)
 
