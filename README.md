@@ -4,6 +4,11 @@ A web application for detecting bad posture using a simple, rule-based AI system
 
 🚀 Live Demo
 👉 [View the live site](https://bad-posture-detection-three.vercel.app/)
+⚠️ **Note:**  
+This project’s backend is hosted on Render’s free plan. The server goes to sleep if there is no activity for a while (about 15–30 minutes).  
+When this happens, the first request can take 30–60 seconds to wake up.  
+
+👉 Please wait for a few seconds if the site appears slow at first.
 
 📹 Demo Video
 👉 [Watch the demo video](https://drive.google.com/file/d/1LM8Lvgro4G2N5z_YYNZXxfcx0nyHOo2h/view?usp=sharing)
